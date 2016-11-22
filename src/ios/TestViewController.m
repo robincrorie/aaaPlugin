@@ -18,6 +18,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor greenColor];
+
+    UINavigationBar * navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+
+    UINavigationItem * navItem = [[UINavigationItem alloc] initWithTitle:@"Native Screen"];
+    UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(closeViewController)];
+    navItem.rightBarButtonItem = rightBtn;
+
+    navBar.items = @[navItem];
+
+    [self.view addSubview:navBar];
+}
+
+- (void)closeViewController {
+  [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
