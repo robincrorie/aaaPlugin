@@ -1,6 +1,7 @@
 #import "MyCordovaPlugin.h"
 
 #import <Cordova/CDVAvailability.h>
+#import "TestViewController.h"
 
 @implementation MyCordovaPlugin
 
@@ -23,6 +24,11 @@
 
   CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:iso8601String];
   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
+- (void)displayView {
+  TestViewController * tvc = [[TestViewController alloc] init];
+  [self.viewController presentViewController:tvc animated:YES completion:nil];
 }
 
 @end
