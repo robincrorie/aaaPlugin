@@ -31,6 +31,14 @@
 }
 
 - (void)closeViewController {
+  BOOL hasErrors = NO;
+  CDVPluginResult* pluginResult;
+  if (hasErrors) {
+      pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_IO_EXCEPTION messageAsString:@"One or more files failed to be deleted."];
+  } else {
+      pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+  }
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
   [self dismissModalViewControllerAnimated:YES];
 }
 
