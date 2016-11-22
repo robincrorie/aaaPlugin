@@ -26,7 +26,7 @@
   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
-- (void)displayView {
+- (void)displayView:(CDVInvokedUrlCommand *)command {
   TestViewController * tvc = [[TestViewController alloc] init];
   [self.viewController presentViewController:tvc animated:YES completion:nil];
 }
