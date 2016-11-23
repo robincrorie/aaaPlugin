@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="my-cordova-plugin"
-    version="1.0.3">
+    version="1.0.4">
     <name>Cordova Plugin Template</name>
     <description></description>
     <license>MIT</license>
@@ -44,5 +44,6 @@
         <source-file src="src/ios/MyCordovaPlugin.m" />
         <header-file src="src/ios/TestViewController.h" />
         <source-file src="src/ios/TestViewController.m" />
+        <resource-file src="src/ios/TestViewController.xib" />
     </platform>
 </plugin>

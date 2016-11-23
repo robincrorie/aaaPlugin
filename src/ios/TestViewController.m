@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor greenColor];
 
     UINavigationBar * navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
 
@@ -31,15 +30,8 @@
 }
 
 - (void)closeViewController {
-  BOOL hasErrors = NO;
-  CDVPluginResult* pluginResult;
-  if (hasErrors) {
-      pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_IO_EXCEPTION messageAsString:@"One or more files failed to be deleted."];
-  } else {
-      pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-  }
-  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-  [self dismissModalViewControllerAnimated:YES];
+    [self.delegate sendPluginResult];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

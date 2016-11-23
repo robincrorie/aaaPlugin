@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestViewController : UIViewController
+@protocol TestViewControllerDelegate <NSObject>
+@required
+- (void)sendPluginResult;
+@end
+
+@interface TestViewController : UIViewController {
+    id <TestViewControllerDelegate> _delegate;
+}
+
+@property (nonatomic,strong) id delegate;
 
 @end
