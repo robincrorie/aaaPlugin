@@ -34,6 +34,8 @@ public class MyCordovaPlugin extends CordovaPlugin {
       // An example of returning data back to the web layer
       final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
       callbackContext.sendPluginResult(result);
+    } else if(action.equals("displayView")) {
+      startActivity(new Intent(this, TestView.class));
     }
     return true;
   }

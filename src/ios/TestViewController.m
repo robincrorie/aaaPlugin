@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    UINavigationBar * navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    NSLog(@"%f", self.view.frame.size.width);
+    UINavigationBar * navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
 
     UINavigationItem * navItem = [[UINavigationItem alloc] initWithTitle:@"Native Screen"];
     UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(closeViewController)];
