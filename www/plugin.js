@@ -11,6 +11,7 @@ var MyCordovaPlugin = {
     exec(cb, null, PLUGIN_NAME, 'getDate', []);
   },
   displayView: function(cb) {
+    console.log('displayView Called');
     exec(cb, null, PLUGIN_NAME, 'displayView', []);
   }
 };
